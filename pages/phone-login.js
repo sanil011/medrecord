@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { useContext } from "react";
+import { Context } from './_app';
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -7,18 +9,23 @@ import { authentication } from "./firebase";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import Navbar from "../component/Navbar";
 import Doctor from "./Doctor";
-import { Hidden } from "@mui/material";
-
+import { Hidden, Link } from "@mui/material";
+import { collection, query, where, getDocs, getFirestore } from "firebase/firestore";
+import { app } from "./firebase";
+let getdt= []
 export default class PhoneLogin extends Component {
   
   constructor() {
     
     super();
+    
+    this.fetchData();
     this.state = {
       isDisabled: true,
       form: true,
       alert: false,
       isVisible:Hidden,
+     
     
     };
   }
@@ -60,6 +67,19 @@ export default class PhoneLogin extends Component {
         console.log(error);
       });
   };
+   fetchData =  () => {
+    const db = getFirestore(app);
+    const q = query(collection(db, "users"), where("phone", "==", "7394812444"));
+    getDocs(q).then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        getdt=doc.data();
+      })
+      console.log(getdt)
+     console.log((getdt.IPFS[0]).substr(34))
+    
+    }).catch((e)=>{console.log(e.message)})
+  }
+
 
   onSubmitOtp = (e) => {
    
