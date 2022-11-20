@@ -4,10 +4,7 @@ import styles from '../styles/homes.module.css';
 // import Modal from "./Modal";
 import { TextField } from "@mui/material";
 import { useMoralis } from "react-moralis";
-
-// Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getDatabase, ref, set } from "firebase/database";
+import Navbar from "../component/Navbar";
 import { getFirestore } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore"; 
 // import { doc, setDoc } from "firebase/firestore";
@@ -28,7 +25,7 @@ const Form = () => {
         // Initialize Firebase
         
         const db = getFirestore(app);
-        const [state, setState] = useState("loading (4 sec)...");
+        // const [state, setState] = useState("loading (4 sec)...");
         const [mounted, setMounted] = useState(true);
         const { Moralis } = useMoralis();
 
@@ -103,11 +100,9 @@ const Form = () => {
               }
         }
        
-        return (
-            <MoralisProvider
-             appId="MyFpOagRB5pWdqQ8R56jZU9YJUn5dGP2KAoWAhoi"
-             serverUrl="https://ubno5c6vadgi.usemoralis.com:2053/server"
-            >
+    return (
+        <>
+           <Navbar/>
                <div className={styles.container}>
                     <form onSubmit={handleSubmit}>
                         <div>
@@ -121,7 +116,7 @@ const Form = () => {
                         </div>
                     </form>
             </div>
-        </MoralisProvider>
+            </>
         )
         
 

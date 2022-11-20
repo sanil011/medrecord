@@ -24,6 +24,7 @@ export default function Doctor(props) {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
+
             }}>
                 <TextField
                     margin="normal"
@@ -61,16 +62,17 @@ export default function Doctor(props) {
                     }}
                 />
                 <Link href="/upRet">
+                    <a>
                         <Button
                         fullWidth
                         variant="contained"
                         sx={{
                             width: "10%",
-                            marginTop: "30px"
+                            marginTop: "50px"
                         }}
                     >
                         Login
-                    </Button>
+                    </Button></a>
                 </Link>
             </Box>
         </div>

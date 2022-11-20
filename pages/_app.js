@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
       appId="MyFpOagRB5pWdqQ8R56jZU9YJUn5dGP2KAoWAhoi"
       serverUrl="https://ubno5c6vadgi.usemoralis.com:2053/server"
     >
-      <Navbar />
+      {/* <Navbar /> */}
       <Component {...pageProps} />
       </MoralisProvider>
     </Context.Provider>

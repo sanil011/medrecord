@@ -7,6 +7,7 @@ import Image from "next/image";
 import Profile from './Images/profile.svg'
 import { Context } from './_app';
 import Link from "next/link";
+import Navbar from "../component/Navbar";
 const RetrieveData = () => {
   const {value , setValue,setIpfs,ipfs} = useContext(Context)
   let datas = [];
@@ -27,7 +28,8 @@ const RetrieveData = () => {
   
   return (
     <>
-      <div className="flex">
+      <Navbar/>
+      <div className="flex pt-16 px-8">
         {console.log(ipfs)}
         {value && value.map((data) => (
           <div className=" w-80 m-4  text-lg" onClick={() => setIpfs((data.IPFS[0]).substr(34))} >

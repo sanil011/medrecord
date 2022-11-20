@@ -26,7 +26,7 @@ const Tb = () => {
     { data && <table className="p-16">
         <tr >
           <td className="p-4 text-3xl">Name - </td>
-          <td className="p-4 text-3xl">{data.name}</td>
+          <td className="p-4 text-3xl">{data.firstName}{ data.lastName}</td>
         </tr>
         <tr >
           <td className="p-4 text-3xl">Age - </td>
@@ -43,6 +43,10 @@ const Tb = () => {
           <tr >
           <td className="p-4 text-3xl">UID - </td>
           <td className="p-4 text-3xl">{data.uid}</td>
+        </tr>
+        <tr >
+          <td className="p-4 text-3xl">Disease - </td>
+          <td className="p-4 text-3xl">{data.disease}</td>
         </tr>
       </table>}
     </div>

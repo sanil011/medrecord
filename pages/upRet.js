@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from "next/image";
-
+import Navbar from '../component/Navbar';
 import styles from '../styles/upRet.module.css';
 
 import Upload from './Images/upload.svg'
@@ -8,7 +8,7 @@ import Retrieve from './Images/retrieve.svg'
 export default function upRet(){
     return(
         <div>
-
+            <Navbar/>
             <div className='flex justify-center py-36'>
                 <div className='flex flex-col'>
                     <Image src={Upload} width={360} height={290} alt="upload"/>

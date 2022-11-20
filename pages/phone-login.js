@@ -6,7 +6,6 @@ import Col from "react-bootstrap/Col";
 import { authentication } from "./firebase";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 
-import {Routes, Route, useNavigate, Navigate, unstable_HistoryRouter} from 'react-router-dom';
 import Doctor from "./Doctor";
 import { Hidden } from "@mui/material";
 
@@ -89,6 +88,7 @@ export default class PhoneLogin extends Component {
   render() {
     
     return (
+
       <div>
         <Container fluid="sm" className="mt-3">
           <Row className="justify-content-center">
@@ -98,7 +98,7 @@ export default class PhoneLogin extends Component {
                 <div id="recaptcha-container"></div>
                 <Form.Group>
                   <Form.Control
-                    type="number"
+                    type="text"
                     name="mobile"
                     placeholder="Mobile Number"
                     onChange={this.onChangeHandler}
@@ -117,7 +117,7 @@ export default class PhoneLogin extends Component {
                 <Form.Group>
                   <Form.Control
                     id="otp"
-                    type="number"
+                    type="text"
                     name="otp"
                     placeholder="OTP"
                     onChange={this.onChangeHandler}
