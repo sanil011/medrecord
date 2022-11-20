@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { authentication } from "./firebase";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
-
+import Navbar from "../component/Navbar";
 import Doctor from "./Doctor";
 import { Hidden } from "@mui/material";
 
@@ -90,16 +90,18 @@ export default class PhoneLogin extends Component {
     return (
 
       <div>
-        <Container fluid="sm" className="mt-3">
+        <Navbar />
+        <div className='flex justify-center mt-56'>
+        <Container fluid="sm" sx={{width:"40em"}} className="mt-3">
           <Row className="justify-content-center">
             <Col xs={12} md={6} lg={5}>
               <h2 className="mb-3">Login</h2>
-              <Form className="form" onSubmit={this.onSignInSubmit}>
-                <div id="recaptcha-container"></div>
+              <Form className="form" sx={{padding:"1em"}} onSubmit={this.onSignInSubmit}>
+                {/* <div id="recaptcha-container"></div> */}
                 <Form.Group>
                   <Form.Control
                     type="text"
-                    name="mobile"
+                      name="mobile"
                     placeholder="Mobile Number"
                     onChange={this.onChangeHandler}
                     required
@@ -134,7 +136,7 @@ export default class PhoneLogin extends Component {
           </Row>
          <div id="reCAPTCHA-conatainer"> </div>
         </Container>
-        
+        </div>
       </div>
     );
    
