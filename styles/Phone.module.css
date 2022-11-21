@@ -1,0 +1,29 @@
+.contain{
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 460px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    align-self: center;
+   
+    justify-content: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    display: flex;
+    flex-direction: column;
+    
+}
+.phoneno{
+   margin-top: 9px;
+    margin-right: 5px;
+   padding: 3px;
+   
+}
+.btnpn{
+    background-color: #71c76b;
+    padding: 3px;
+    border:7px transparent;
+
+    color: #FFFFFF;
+    size: 10px;
+}
