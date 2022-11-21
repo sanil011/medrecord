@@ -14,6 +14,8 @@ import { Alert, Hidden, Link } from "@mui/material";
 import { collection, query, where, getDocs, getFirestore } from "firebase/firestore";
 import { app } from "./firebase";
 import styles from "../styles/Phone.module.css";
+import mlogin from "../pages/Images/mlogin.svg";
+import Image from "next/image";
 
 let getdt= []
 
@@ -104,6 +106,7 @@ const Phoneverify=()=>{
     <>
     <Navbar />
     <div className={styles.contain}>
+    <Image src={mlogin} />
       <div className={styles.phoneno}>
       
       <input type="text" placeholder="Mobile Number" id="mobile" name="mobile" className={styles.phoneno} onChange={(e)=>{setPn(e.target.value)}} />
