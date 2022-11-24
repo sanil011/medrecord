@@ -20,21 +20,20 @@ const Update = () => {
     }
     console.log(value)
   return (
-      <div className="relative">
+      <div className="">
       <Navbar />
       <div className="pt-4 px-4">
-         <form className=" absolute right-8">
-              {/* <label>Search</label> */}
+         <form className="  text-center">
               <TextField type="text" label="Search" value={query}  onChange={onSearch}/>
-            {/* <input type="text" value={query} onChange={onSearch} /> */}
           </form>
           <div className="flex pt-16">
           {
-              dataResult.map((person, i) =>
-              <div className='shadow-gray-900 p-4 m-2 rounded-md bg-slate-200' key={i}>
+            dataResult.map((person, i) => {
+              return(<div className='shadow-gray-900 p-4 m-2 rounded-md bg-slate-200' key={i}>
               <h3>Patient - {person.firstName}{ person.lastName}</h3>
               <h2> Phone - {person.phone}</h2>
-          </div>)
+              </div>)
+            })
           }</div></div>
     </div>
   )
