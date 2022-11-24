@@ -9,23 +9,8 @@ import { Context } from './_app';
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 const RetrieveData = () => {
-  const {value , setValue,setIpfs,ipfs} = useContext(Context)
+  const {value ,setIpfs,ipfs} = useContext(Context)
   let datas = [];
-  useEffect( () => {
-    fetchData();
-    console.log(value)
-  },[])
-    const fetchData =  () => {
-    const db = getFirestore(app);
-    const q = query(collection(db, "users"));
-    getDocs(q).then((snapshot) => {
-      snapshot.docs.forEach((doc) => {
-        datas.push({...doc.data(),id:doc.id})
-      })
-      setValue(datas)
-      }).catch((e)=>{console.log(e.message)})
-  }
-  
   return (
     <>
       <Navbar/>

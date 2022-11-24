@@ -16,6 +16,7 @@
     "bootstrap": "^5.2.2",
     "firebase": "^9.12.1",
     "firebaseauth": "^1.0.0",
+    "fuse.js": "^6.6.2",
     "magic-sdk": "^9.0.0",
     "moralis": "^1.2.4",
     "moralis-v1": "^1.11.0",

@@ -2,6 +2,7 @@ import React, { Component, useEffect ,useContext,useState} from "react";
 // import { kdata } from "./tabledata";
 import { Context } from './_app';
 import axios from "axios";
+import Navbar from "../component/Navbar";
 const Tb = () => {
   const { ipfs } = useContext(Context);
   const [data , setData] = useState()
@@ -22,11 +23,13 @@ const Tb = () => {
   }
 
   return (
-    <div className="flex justify-center pt-56 text-2xl">
+    <>
+      <Navbar/>
+    <div className="flex justify-center pt-44 text-2xl">
     { data && <table className="p-16">
         <tr >
           <td className="p-4 text-3xl">Name - </td>
-          <td className="p-4 text-3xl">{data.firstName}{ data.lastName}</td>
+          <td className="p-4 text-3xl">{data.firstName} { data.lastName}</td>
         </tr>
         <tr >
           <td className="p-4 text-3xl">Age - </td>
@@ -49,7 +52,7 @@ const Tb = () => {
           <td className="p-4 text-3xl">{data.disease}</td>
         </tr>
       </table>}
-    </div>
+    </div></>
   )
 }
 export default Tb;

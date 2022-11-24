@@ -12,17 +12,6 @@ import { collection, addDoc } from "firebase/firestore";
 import { MoralisProvider } from "react-moralis";
 import { app } from "./firebase";
 const Form = () => {
-        const firebaseConfig = {
-            apiKey: "AIzaSyDhbHCdWM7Y4PttG5iBB4DW_2TtODDiOHw",
-            authDomain: "medi-doc-1e5cc.firebaseapp.com",
-            projectId: "medi-doc-1e5cc",
-            storageBucket: "medi-doc-1e5cc.appspot.com",
-            messagingSenderId: "1046832478746",
-            appId: "1:1046832478746:web:7357989e618e78003dafa3",
-            measurementId: "G-SDV38PMCRL"
-        };
-        
-        // Initialize Firebase
         
         const db = getFirestore(app);
         // const [state, setState] = useState("loading (4 sec)...");
@@ -103,7 +92,8 @@ const Form = () => {
     return (
         <>
            <Navbar/>
-               <div className={styles.container}>
+            <div className={styles.container}>
+                <div className="pt-0">
                     <form onSubmit={handleSubmit}>
                         <div>
                          {formValues.map((element, index) => (
@@ -114,7 +104,7 @@ const Form = () => {
                            <button className={styles.add} type="button" onClick={() => addFormFields()}>Add a field</button>
                            <button className={styles.submit} type="submit">Submit</button>
                         </div>
-                    </form>
+                    </form></div>
             </div>
             </>
         )

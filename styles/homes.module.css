@@ -32,15 +32,15 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    margin-top: 10em;
-    padding-right: 6.5em;
+    /* margin-top: 10em; */
+    padding-right: .5em;
 }
 
 .button_section button {
     /* background-color:#1746A2 ; */
     background-image: linear-gradient(to right,#1746A2,#5F9DF7);
     border: none;
-    padding: 1em;
+    padding: .7em;
     font-size: 1rem;
     border-radius: 10px;
     width: 11em;
