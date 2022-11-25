@@ -9,23 +9,42 @@ import { Context } from './_app';
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import { TextField } from "@mui/material";
-
+import { collection, query,  getDocs, getFirestore } from "firebase/firestore";
+import { app } from "./firebase";
 
 const RetrieveData = () => {
-  const {value ,setIpfs} = useContext(Context)
+  const { setIpfs } = useContext(Context)
+  const [value, setValue] = useState('');
   let datas = [];
-  const [query, setQuery] = useState('');
+  const [query1, setQuery] = useState('');
     const fuse = new Fuse(value, {
         keys: [
-            'uid',
-            'phone'
+            'Uid'
         ]
     })
-  const results = fuse.search(query);
-    const dataResult = query ? results.map(data => data.item) : value;
+  const results = fuse.search(query1.length === 8 ? query1 :"");
+  const dataResult = query1 ? results.map(data => data.item) : "";
+  
+  useEffect( () => {
+    fetchData();
+  },[])
+    const fetchData =  () => {
+    const db = getFirestore(app);
+    const q = query(collection(db, "users"))
+    getDocs(q).then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        datas.push({...doc.data(),id:doc.id})
+      })
+      setValue(datas)
+    }).catch((e) => { console.log(e.message) })
 
-    function onSearch({ currentTarget }) {
-    setQuery(currentTarget.value);
+  }
+
+  function onSearch({ currentTarget }) {
+
+
+      setQuery(currentTarget.value);
+
     }
   return (
     <>
@@ -34,7 +53,7 @@ const RetrieveData = () => {
       <Link href='/emergency'>
           <button className="bg-[#1977F2]  w-[8em] h-[3em] rounded-lg mt-5 text-white cursor-pointer disabled:bg-gray-300  "> <div className='flex justify-between px-2'><Image src={Finger} width={25} height={25} /> <Image src={FaceId} width={25} height={25}/> </div> </button></Link>
           <form className="pt-4">
-              <TextField type="text" label="Search" value={query}  onChange={onSearch}/>
+              <TextField type="text" label="Search" value={query1}  onChange={onSearch}/>
           </form>
       </div>
       <div className="flex pt-16 px-8 ">
