@@ -2,10 +2,11 @@ import Link from 'next/link';
 import Image from "next/image";
 import Navbar from '../component/Navbar';
 
-
+import styles from '../styles/index.module.css'
 import Upload from './Images/upload.svg'
 import Retrieve from './Images/retrieve.svg'
 import Update from './Images/update.svg'
+
 
 export default function upRet(){
     return(
@@ -30,7 +31,10 @@ export default function upRet(){
                     <button className='mt-16 p-3 w-[80%] text-xl rounded-xl ml-8 bg-gradient-to-r from-[#1746A2] to-[#5F9DF7]'>Update Data</button>
                     </Link>
                 </div>
+                
             </div>
+          
+          
         </div>
     )
 }
