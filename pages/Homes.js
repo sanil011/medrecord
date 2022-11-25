@@ -1,20 +1,15 @@
 import { useState, useEffect } from "react";
 import styles from '../styles/homes.module.css';
-// import style from "../styles/index.module.css";
-// import Modal from "./Modal";
 import { TextField } from "@mui/material";
 import { useMoralis } from "react-moralis";
 import Navbar from "../component/Navbar";
 import { getFirestore } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore"; 
-// import { doc, setDoc } from "firebase/firestore";
-// import PhoneLogin from "./phone-login";
 import { MoralisProvider } from "react-moralis";
 import { app } from "./firebase";
 const Form = () => {
         
         const db = getFirestore(app);
-        // const [state, setState] = useState("loading (4 sec)...");
         const [mounted, setMounted] = useState(true);
         const { Moralis } = useMoralis();
 

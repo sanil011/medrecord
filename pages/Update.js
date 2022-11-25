@@ -26,7 +26,7 @@ const Update = () => {
          <form className="  text-center">
               <TextField type="text" label="Search" value={query}  onChange={onSearch}/>
           </form>
-          <div className="flex pt-16">
+          <div className="flex flex-wrap pt-16">
           {
             dataResult.map((person, i) => {
               return(<div className='shadow-gray-900 p-4 m-2 rounded-md bg-slate-200' key={i}>

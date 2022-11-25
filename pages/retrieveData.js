@@ -1,8 +1,10 @@
-// const TableData =  fetch(`https://ipfs.moralis.io:2053/ipfs/QmNbQfmG5iqnzVdGN6fRAKPaY6Gn9nVe8LunAmXH6P9tzE`);
+
 import Fuse from 'fuse.js';
 import React, { useContext,useEffect,useState } from "react";
 import Image from "next/image";
 import Profile from './Images/profile.svg'
+import FaceId from './Images/faceid.png';
+import Finger from './Images/fingerprint.png';
 import { Context } from './_app';
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -28,9 +30,13 @@ const RetrieveData = () => {
   return (
     <>
       <Navbar />
-      <form className="  text-center pt-8">
+      <div className='flex justify-around'>
+      <Link href='/emergency'>
+          <button className="bg-[#1977F2]  w-[8em] h-[3em] rounded-lg mt-5 text-white cursor-pointer disabled:bg-gray-300  "> <div className='flex justify-between px-2'><Image src={Finger} width={25} height={25} /> <Image src={FaceId} width={25} height={25}/> </div> </button></Link>
+          <form className="pt-4">
               <TextField type="text" label="Search" value={query}  onChange={onSearch}/>
           </form>
+      </div>
       <div className="flex pt-16 px-8 ">
         {dataResult && dataResult.map((data) => (
           <div className=" w-[20%] m-4 bg-slate-200 rounded-md p-4 text-center text-lg" onClick={() => setIpfs((data.IPFS[0]).substr(34))} >
