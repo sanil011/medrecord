@@ -21,7 +21,11 @@ const Form = () => {
         { fieldName: "Age", fieldValue: "", idValue:"metadataAge" },
         { fieldName: "Blood_Group", fieldValue: "", idValue:"metadataBloodGroup" },
         { fieldName: "Gender", fieldValue: "", idValue: "metadataGender" },
-        { fieldName: "Disease", fieldValue: [], idValue: "metadataDisease" }
+        { fieldName: "Disease", fieldValue: [], idValue: "metadataDisease" },
+        { fieldName: "Allergy", fieldValue: [], idValue: "metadataAll" },
+        { fieldName: "SugarLevel", fieldValue: [], idValue: "metadataLevel" }
+
+
     ])
         
         let handleChange = (i, e) => {
@@ -45,6 +49,10 @@ const Form = () => {
             const gender=document.getElementById('metadataGender').value;
             const phonee=document.getElementById('metadatano').value;
             const disease=document.getElementById('metadataDisease').value;
+            const Allerg=document.getElementById('metadataAll').value;
+            const Level=document.getElementById('metadataLevel').value;
+
+
 
 
             const metadata={
@@ -56,6 +64,8 @@ const Form = () => {
                 "gender":gender,
                 "phone":phonee,
                 "disease":disease,
+                "Allergy":Allerg,
+                "Sugar":Level
             }
 
             console.log(metadata);
