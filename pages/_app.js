@@ -8,10 +8,11 @@ export const Context = createContext();
 function MyApp({ Component, pageProps }) {
   const [value, setValue] = useState('');
   const [ipfs, setIpfs] = useState('none');
+  const [docValue, setDocValue] = useState('');
   return (
   
 
-    <Context.Provider value={{value,  setValue ,setIpfs ,ipfs}}>
+    <Context.Provider value={{value,  setValue ,setIpfs ,ipfs ,setDocValue ,docValue}}>
       <MoralisProvider
       appId="MyFpOagRB5pWdqQ8R56jZU9YJUn5dGP2KAoWAhoi"
       serverUrl="https://ubno5c6vadgi.usemoralis.com:2053/server"

@@ -5,8 +5,8 @@ import Base64Downloader from 'react-base64-downloader';
 const WebcamComponent = () => <Webcam />;
 
 const videoConstraints = {
-    width: 600,
-    height: 400,
+    width: 200,
+    height: 200,
     facingMode: "user"
 };
 
